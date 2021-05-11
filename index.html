@@ -23,7 +23,7 @@
         let city = document.getElementById("theCity").value;
         console.log("name of city:", city)
     let cityUpper = city[0].toUpperCase()+city.substring(1);
-    let website = "http://api.openweathermap.org/data/2.5/weather?q="
+    let website = "https://api.openweathermap.org/data/2.5/weather?q="
     let apiKey = `&appid=${APIKEY}`
     let fullUrl = website+city+apiKey
     
