@@ -16,14 +16,15 @@
         <button type="button" class="btn btn-outline-primary p-9w-25" onclick="getInputValue()" id="search-addon">search</button>
     </div>
 
-
+    <script src="scripts/api.js"></script>
     <script>
 
     function getInputValue (){
         let city = document.getElementById("theCity").value;
         console.log("name of city:", city)
+    let cityUpper = city[0].toUpperCase()+city.substring(1);
     let website = "http://api.openweathermap.org/data/2.5/weather?q="
-    let apiKey = "&appid=dc7afe437a0a89c1f4c6d9b8427ea794"
+    let apiKey = `&appid=${APIKEY}`
     let fullUrl = website+city+apiKey
     
     fetch(fullUrl)
@@ -39,7 +40,7 @@
 
         let div = document.querySelector('div');
 
-        div.textContent = `Current Temp: ${degF}`
+        div.textContent = `Current Temp in ${cityUpper} is ${degF}°F`
 
     })
     }
